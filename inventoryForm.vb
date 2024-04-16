@@ -1,12 +1,13 @@
 ﻿Imports System.Drawing.Printing
 Imports System.Reflection
+Imports System.Security.Authentication.ExtendedProtection
 Imports MySql.Data.MySqlClient
 
 Public Class inventoryForm
     Dim dbDataSet As New DataTable
     Dim bSource As New BindingSource
 
-    Private Sub submitbtn_Click(sender As Object, e As EventArgs) Handles submitbtn.Click
+    Private Sub submitbtn_Click_1(sender As Object, e As EventArgs) Handles submitbtn.Click
         Try
             Module1.Connect_to_DB()
             If String.IsNullOrEmpty(modeltxt.Text) OrElse
@@ -78,9 +79,7 @@ Public Class inventoryForm
         remarkscmb.SelectedIndex = -1
     End Sub
 
-
-
-    Private Sub updatebtn_Click(sender As Object, e As EventArgs) Handles updatebtn.Click
+    Private Sub updatebtn_Click_1(sender As Object, e As EventArgs) Handles updatebtn.Click
         Try
             If dginventory.SelectedRows.Count > 0 Then
                 Dim id As Integer = Convert.ToInt32(dginventory.SelectedRows(0).Cells("idinventory").Value)
@@ -111,11 +110,7 @@ Public Class inventoryForm
         End Try
     End Sub
 
-    Private Sub exitbtn_Click(sender As Object, e As EventArgs) Handles exitbtn.Click
-        Me.Close()
-    End Sub
-
-    Private Sub deletebtn_Click(sender As Object, e As EventArgs) Handles deletebtn.Click
+    Private Sub deletebtn_Click_1(sender As Object, e As EventArgs) Handles deletebtn.Click
         Try
             Module1.Connect_to_DB()
 
@@ -148,6 +143,14 @@ Public Class inventoryForm
         Finally
             Module1.Disconnect_to_DB()
         End Try
+    End Sub
+
+    Private Sub clearbtn_Click_1(sender As Object, e As EventArgs) Handles clearbtn.Click
+        Clear_Boxes()
+    End Sub
+
+    Private Sub exitbtn_Click_1(sender As Object, e As EventArgs) Handles exitbtn.Click
+        Me.Close()
     End Sub
 
     Private Sub dginventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dginventory.CellContentClick
@@ -227,16 +230,13 @@ Public Class inventoryForm
         End If
     End Sub
 
-    Private Sub clearbtn_Click(sender As Object, e As EventArgs) Handles clearbtn.Click
-        Clear_Boxes()
-    End Sub
-
-    Private Sub printbtn_Click(sender As Object, e As EventArgs) Handles printbtn.Click
+    Private Sub printbtn_Click_1(sender As Object, e As EventArgs) Handles printbtn.Click
         Try
             If dginventory.Rows.Count = 0 Then
                 MessageBox.Show("There are no records to print.", "No Records", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Return
             End If
+
             inventoryprintpreview.Document = inventoryprint
             inventoryprintpreview.WindowState = FormWindowState.Maximized
             inventoryprintpreview.ShowDialog()
@@ -244,4 +244,84 @@ Public Class inventoryForm
             MessageBox.Show("Error occurred while preparing the print preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
+    Private mRow As Integer = 0
+    Private newPage As Boolean
+
+    Private Sub inventoryprint_PrintPage(sender As Object, e As PrintPageEventArgs) Handles inventoryprint.PrintPage
+        Dim titleFont As New Font("Arial", 30, FontStyle.Bold)
+        Dim contentFont As New Font("Arial", 12)
+        Dim headerBrush As New SolidBrush(Color.Gray)
+        Dim contentBrush As New SolidBrush(Color.Black)
+        Dim startX As Integer = 35
+        Dim startY As Integer = 100
+        Dim cellHeight As Integer = 40
+        Dim cellPadding As Integer = 1
+        Dim cellWidthMultiplier As Single = 1  ' Adjust this multiplier for wider cells
+
+        ' Print title
+        Dim title As String = "Inventory List"
+        Dim titleFormat As New StringFormat With {.Alignment = StringAlignment.Center}
+        Dim titleRect As New Rectangle(0, 50, e.PageBounds.Width, 60)
+        e.Graphics.DrawString(title, titleFont, Brushes.Black, titleRect, titleFormat)
+
+        ' Print column headers
+        Dim x As Integer = startX
+        For Each column As DataGridViewColumn In dginventory.Columns
+            If column.Visible Then
+                ' Calculate adjusted width for the cell with multiplier
+                Dim adjustedCellWidth As Single = column.Width * cellWidthMultiplier - 2 * cellPadding
+
+                Dim headerRect As New Rectangle(x, startY, column.Width * cellWidthMultiplier, cellHeight)
+                e.Graphics.FillRectangle(headerBrush, headerRect)
+                e.Graphics.DrawRectangle(Pens.Black, headerRect)
+
+                ' Create a StringFormat for center alignment
+                Dim headerFormat As New StringFormat()
+                headerFormat.Alignment = StringAlignment.Center
+                headerFormat.LineAlignment = StringAlignment.Center
+
+                ' Draw header text with center alignment
+                e.Graphics.DrawString(column.HeaderText, contentFont, Brushes.Black, New RectangleF(x + cellPadding, startY + cellPadding, adjustedCellWidth, cellHeight - 2 * cellPadding), headerFormat)
+                x += column.Width * cellWidthMultiplier
+            End If
+        Next
+
+        ' Print data rows
+        startY += cellHeight
+        Dim cellRect As Rectangle
+        Do While mRow < dginventory.Rows.Count
+            x = startX
+            Dim row As DataGridViewRow = dginventory.Rows(mRow)
+            For Each cell As DataGridViewCell In row.Cells
+                If cell.Visible Then
+                    ' Calculate adjusted width for the cell with multiplier
+                    Dim adjustedCellWidth As Single = cell.OwningColumn.Width * cellWidthMultiplier - 2 * cellPadding
+
+                    cellRect = New Rectangle(x, startY, cell.OwningColumn.Width * cellWidthMultiplier, cellHeight)
+                    e.Graphics.DrawRectangle(Pens.Black, cellRect)
+
+                    ' Create a StringFormat for center alignment
+                    Dim cellFormat As New StringFormat()
+                    cellFormat.Alignment = StringAlignment.Center
+                    cellFormat.LineAlignment = StringAlignment.Center
+
+                    ' Draw cell text with center alignment
+                    e.Graphics.DrawString(cell.FormattedValue.ToString(), contentFont, contentBrush, New RectangleF(x + cellPadding, startY + cellPadding, adjustedCellWidth, cellHeight - 2 * cellPadding), cellFormat)
+                    x += cell.OwningColumn.Width * cellWidthMultiplier
+                End If
+            Next
+            startY += cellHeight
+            mRow += 1
+
+            ' Check if new page needed
+            If startY + cellHeight > e.PageBounds.Height - 100 Then
+                newPage = True
+                Exit Do
+            End If
+        Loop
+        e.HasMorePages = newPage
+        newPage = False
+    End Sub
+
 End Class
