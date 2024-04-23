@@ -107,6 +107,7 @@ Partial Class ForgotPassForm
         Me.usernametxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.usernametxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.usernametxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.usernametxt.FillColor = System.Drawing.Color.WhiteSmoke
         Me.usernametxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.usernametxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.usernametxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -127,6 +128,7 @@ Partial Class ForgotPassForm
         Me.oldpasstxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.oldpasstxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.oldpasstxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.oldpasstxt.FillColor = System.Drawing.Color.WhiteSmoke
         Me.oldpasstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.oldpasstxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.oldpasstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -147,6 +149,7 @@ Partial Class ForgotPassForm
         Me.newpasstxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.newpasstxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.newpasstxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.newpasstxt.FillColor = System.Drawing.Color.WhiteSmoke
         Me.newpasstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.newpasstxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.newpasstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -161,13 +164,16 @@ Partial Class ForgotPassForm
         '
         'confirmpasstxt
         '
+        Me.confirmpasstxt.Animated = True
         Me.confirmpasstxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.confirmpasstxt.DefaultText = ""
         Me.confirmpasstxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
         Me.confirmpasstxt.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
         Me.confirmpasstxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.confirmpasstxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.confirmpasstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.confirmpasstxt.FillColor = System.Drawing.Color.WhiteSmoke
+        Me.confirmpasstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer))
+        Me.confirmpasstxt.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.confirmpasstxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.confirmpasstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.confirmpasstxt.Location = New System.Drawing.Point(399, 382)
@@ -176,8 +182,10 @@ Partial Class ForgotPassForm
         Me.confirmpasstxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.confirmpasstxt.PlaceholderText = ""
         Me.confirmpasstxt.SelectedText = ""
+        Me.confirmpasstxt.ShadowDecoration.Color = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.confirmpasstxt.Size = New System.Drawing.Size(290, 38)
         Me.confirmpasstxt.TabIndex = 55
+        Me.confirmpasstxt.TextOffset = New System.Drawing.Point(1, 1)
         '
         'Label5
         '
@@ -257,6 +265,7 @@ Partial Class ForgotPassForm
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "ForgotPassForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ForgotPassForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()

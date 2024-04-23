@@ -151,6 +151,7 @@ Public Class inventoryForm
 
     Private Sub exitbtn_Click_1(sender As Object, e As EventArgs) Handles exitbtn.Click
         Me.Close()
+        loginForm.Show()
     End Sub
 
     Private Sub dginventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dginventory.CellContentClick
@@ -216,7 +217,7 @@ Public Class inventoryForm
     End Sub
 
     Private Sub searchtxt_TextChanged(sender As Object, e As EventArgs) Handles searchtxt.TextChanged
-        Dim filterExpression As String = String.Format("model Like '%{0}%' OR serial Like '%{0}%' OR property Like '%{0}%' OR propertyno Like '%{0}%' OR location Like '%{0}%'", searchtxt.Text)
+        Dim filterExpression As String = String.Format("model Like '%{0}%' OR serial Like '%{0}%' OR property Like '%{0}%' OR propertyno Like '%{0}%' OR location Like '%{0}%' OR remarks Like '%{0}%'", searchtxt.Text)
         Dim DV As New DataView(dbDataSet)
         DV.RowFilter = filterExpression
         dginventory.DataSource = DV
@@ -249,7 +250,7 @@ Public Class inventoryForm
     Private newPage As Boolean
 
     Private Sub inventoryprint_PrintPage(sender As Object, e As PrintPageEventArgs) Handles inventoryprint.PrintPage
-        Dim titleFont As New Font("Arial", 30, FontStyle.Bold)
+        Dim titleFont As New Font("Arial", 20, FontStyle.Bold)
         Dim contentFont As New Font("Arial", 12)
         Dim headerBrush As New SolidBrush(Color.Gray)
         Dim contentBrush As New SolidBrush(Color.Black)
@@ -323,5 +324,4 @@ Public Class inventoryForm
         e.HasMorePages = newPage
         newPage = False
     End Sub
-
 End Class

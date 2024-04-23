@@ -23,9 +23,9 @@ Partial Class inventoryForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(inventoryForm))
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
@@ -54,8 +54,13 @@ Partial Class inventoryForm
         Me.printbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.exitbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.searchtxt = New System.Windows.Forms.TextBox()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.Guna2ContextMenuStrip1 = New Guna.UI2.WinForms.Guna2ContextMenuStrip()
         CType(Me.dginventory, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -69,7 +74,7 @@ Partial Class inventoryForm
         Me.Guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
         Me.Guna2ControlBox2.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox2.Location = New System.Drawing.Point(1483, 12)
+        Me.Guna2ControlBox2.Location = New System.Drawing.Point(1498, 12)
         Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
         Me.Guna2ControlBox2.Size = New System.Drawing.Size(34, 26)
         Me.Guna2ControlBox2.TabIndex = 39
@@ -80,7 +85,7 @@ Partial Class inventoryForm
         Me.Guna2ControlBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1523, 12)
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1538, 12)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(34, 26)
         Me.Guna2ControlBox1.TabIndex = 38
@@ -95,28 +100,29 @@ Partial Class inventoryForm
         '
         'dginventory
         '
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.dginventory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dginventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
+        Me.dginventory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        Me.dginventory.BackgroundColor = System.Drawing.Color.LightGray
+        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dginventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.dginventory.ColumnHeadersHeight = 4
         Me.dginventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dginventory.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dginventory.DefaultCellStyle = DataGridViewCellStyle15
         Me.dginventory.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dginventory.Location = New System.Drawing.Point(499, 106)
+        Me.dginventory.Location = New System.Drawing.Point(533, 103)
         Me.dginventory.Name = "dginventory"
         Me.dginventory.RowHeadersVisible = False
         Me.dginventory.RowHeadersWidth = 51
@@ -128,7 +134,7 @@ Partial Class inventoryForm
         Me.dginventory.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
         Me.dginventory.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
         Me.dginventory.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dginventory.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.dginventory.ThemeStyle.BackColor = System.Drawing.Color.LightGray
         Me.dginventory.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dginventory.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dginventory.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
@@ -150,12 +156,13 @@ Partial Class inventoryForm
         Me.remarkscmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.remarkscmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.remarkscmb.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.remarkscmb.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
+        Me.remarkscmb.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.remarkscmb.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.remarkscmb.FormattingEnabled = True
-        Me.remarkscmb.Items.AddRange(New Object() {"WORKING", "DEFECTIVE"})
+        Me.remarkscmb.Items.AddRange(New Object() {"Working", "Defective"})
         Me.remarkscmb.Location = New System.Drawing.Point(185, 456)
         Me.remarkscmb.Name = "remarkscmb"
-        Me.remarkscmb.Size = New System.Drawing.Size(290, 31)
+        Me.remarkscmb.Size = New System.Drawing.Size(290, 36)
         Me.remarkscmb.TabIndex = 65
         '
         'inventoryprint
@@ -182,7 +189,7 @@ Partial Class inventoryForm
         Me.idinventorytxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.idinventorytxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.idinventorytxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.idinventorytxt.Location = New System.Drawing.Point(185, 39)
+        Me.idinventorytxt.Location = New System.Drawing.Point(185, 38)
         Me.idinventorytxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.idinventorytxt.Name = "idinventorytxt"
         Me.idinventorytxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -215,22 +222,22 @@ Partial Class inventoryForm
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(16, 118)
+        Me.Label8.BackColor = System.Drawing.Color.White
+        Me.Label8.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(20, 115)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(83, 25)
+        Me.Label8.Size = New System.Drawing.Size(78, 28)
         Me.Label8.TabIndex = 72
         Me.Label8.Text = "MODEL"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(16, 186)
+        Me.Label1.BackColor = System.Drawing.Color.White
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(20, 183)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(82, 25)
+        Me.Label1.Size = New System.Drawing.Size(72, 28)
         Me.Label1.TabIndex = 73
         Me.Label1.Text = "SERIAL"
         '
@@ -277,11 +284,11 @@ Partial Class inventoryForm
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(14, 256)
+        Me.Label2.BackColor = System.Drawing.Color.White
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(20, 253)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(119, 25)
+        Me.Label2.Size = New System.Drawing.Size(103, 28)
         Me.Label2.TabIndex = 76
         Me.Label2.Text = "PROPERTY"
         '
@@ -308,11 +315,11 @@ Partial Class inventoryForm
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.BackColor = System.Drawing.Color.Transparent
-        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(16, 324)
+        Me.Label9.BackColor = System.Drawing.Color.White
+        Me.Label9.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(20, 321)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(159, 25)
+        Me.Label9.Size = New System.Drawing.Size(142, 28)
         Me.Label9.TabIndex = 78
         Me.Label9.Text = "PROPERTY NO."
         '
@@ -339,22 +346,22 @@ Partial Class inventoryForm
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(17, 395)
+        Me.Label7.BackColor = System.Drawing.Color.White
+        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(20, 392)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(116, 25)
+        Me.Label7.Size = New System.Drawing.Size(104, 28)
         Me.Label7.TabIndex = 80
         Me.Label7.Text = "LOCATION"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(15, 460)
+        Me.Label4.BackColor = System.Drawing.Color.White
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(20, 464)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(110, 25)
+        Me.Label4.Size = New System.Drawing.Size(100, 28)
         Me.Label4.TabIndex = 81
         Me.Label4.Text = "REMARKS"
         '
@@ -388,11 +395,12 @@ Partial Class inventoryForm
         '
         'deletebtn
         '
+        Me.deletebtn.BackColor = System.Drawing.Color.Transparent
         Me.deletebtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
         Me.deletebtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
         Me.deletebtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.deletebtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.deletebtn.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.deletebtn.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold)
         Me.deletebtn.ForeColor = System.Drawing.Color.White
         Me.deletebtn.Location = New System.Drawing.Point(25, 553)
         Me.deletebtn.Name = "deletebtn"
@@ -444,28 +452,67 @@ Partial Class inventoryForm
         '
         'searchtxt
         '
-        Me.searchtxt.Location = New System.Drawing.Point(1172, 61)
+        Me.searchtxt.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.searchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.searchtxt.Font = New System.Drawing.Font("Segoe UI", 11.0!)
+        Me.searchtxt.Location = New System.Drawing.Point(1286, 60)
         Me.searchtxt.Multiline = True
         Me.searchtxt.Name = "searchtxt"
         Me.searchtxt.Size = New System.Drawing.Size(274, 37)
         Me.searchtxt.TabIndex = 55
         '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(12, 44)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(492, 490)
+        Me.Guna2PictureBox1.TabIndex = 90
+        Me.Guna2PictureBox1.TabStop = False
+        '
+        'Guna2PictureBox2
+        '
+        Me.Guna2PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guna2PictureBox2.ImageRotate = 0!
+        Me.Guna2PictureBox2.Location = New System.Drawing.Point(523, 41)
+        Me.Guna2PictureBox2.Name = "Guna2PictureBox2"
+        Me.Guna2PictureBox2.Size = New System.Drawing.Size(1046, 713)
+        Me.Guna2PictureBox2.TabIndex = 91
+        Me.Guna2PictureBox2.TabStop = False
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(1071, 73)
+        Me.Label5.BackColor = System.Drawing.Color.White
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(1172, 72)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(95, 25)
+        Me.Label5.Size = New System.Drawing.Size(84, 28)
         Me.Label5.TabIndex = 89
         Me.Label5.Text = "SEARCH"
+        '
+        'Guna2ContextMenuStrip1
+        '
+        Me.Guna2ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.Guna2ContextMenuStrip1.Name = "Guna2ContextMenuStrip1"
+        Me.Guna2ContextMenuStrip1.RenderStyle.ArrowColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ContextMenuStrip1.RenderStyle.BorderColor = System.Drawing.Color.Gainsboro
+        Me.Guna2ContextMenuStrip1.RenderStyle.ColorTable = Nothing
+        Me.Guna2ContextMenuStrip1.RenderStyle.RoundedEdges = True
+        Me.Guna2ContextMenuStrip1.RenderStyle.SelectionArrowColor = System.Drawing.Color.White
+        Me.Guna2ContextMenuStrip1.RenderStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Guna2ContextMenuStrip1.RenderStyle.SelectionForeColor = System.Drawing.Color.White
+        Me.Guna2ContextMenuStrip1.RenderStyle.SeparatorColor = System.Drawing.Color.Gainsboro
+        Me.Guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
+        Me.Guna2ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'inventoryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1569, 769)
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.ClientSize = New System.Drawing.Size(1584, 769)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.exitbtn)
         Me.Controls.Add(Me.printbtn)
@@ -491,10 +538,17 @@ Partial Class inventoryForm
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Guna2ControlBox2)
         Me.Controls.Add(Me.Guna2ControlBox1)
+        Me.Controls.Add(Me.Guna2PictureBox1)
+        Me.Controls.Add(Me.Guna2PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.MaximumSize = New System.Drawing.Size(1584, 769)
         Me.Name = "inventoryForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
         Me.Text = "inventoryForm"
+        Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dginventory, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -527,5 +581,8 @@ Partial Class inventoryForm
     Friend WithEvents printbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents exitbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents searchtxt As TextBox
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents Guna2ContextMenuStrip1 As Guna.UI2.WinForms.Guna2ContextMenuStrip
 End Class

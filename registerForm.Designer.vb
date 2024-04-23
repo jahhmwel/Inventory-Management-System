@@ -159,6 +159,7 @@ Partial Class registerForm
         Me.Guna2HtmlLabel3.Name = "Guna2HtmlLabel3"
         Me.Guna2HtmlLabel3.Size = New System.Drawing.Size(3, 2)
         Me.Guna2HtmlLabel3.TabIndex = 46
+        Me.Guna2HtmlLabel3.Text = Nothing
         '
         'registerbtn
         '
@@ -296,6 +297,7 @@ Partial Class registerForm
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "registerForm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "registerForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()

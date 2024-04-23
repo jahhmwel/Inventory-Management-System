@@ -17,6 +17,9 @@ Public Class loginForm
             If myreader.HasRows Then
                 Me.Hide()
                 inventoryForm.Show()
+
+                .usernametxt.Text = ""
+                .passwordtxt.Text = ""
             Else
                 MessageBox.Show("Invalid username or password")
             End If
