@@ -28,7 +28,7 @@ Partial Class manualAttendance
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.namecmb = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Guna2DateTimePicker1 = New Guna.UI2.WinForms.Guna2DateTimePicker()
+        Me.datetimepck = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.timeinbtn = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.timeoutbtn = New Guna.UI2.WinForms.Guna2GradientButton()
         Me.printdtrbtn = New Guna.UI2.WinForms.Guna2GradientButton()
@@ -81,23 +81,23 @@ Partial Class manualAttendance
         Me.namecmb.Size = New System.Drawing.Size(636, 36)
         Me.namecmb.TabIndex = 47
         '
-        'Guna2DateTimePicker1
+        'datetimepck
         '
-        Me.Guna2DateTimePicker1.Animated = True
-        Me.Guna2DateTimePicker1.BackColor = System.Drawing.Color.Transparent
-        Me.Guna2DateTimePicker1.Checked = True
-        Me.Guna2DateTimePicker1.FillColor = System.Drawing.SystemColors.InactiveCaption
-        Me.Guna2DateTimePicker1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
-        Me.Guna2DateTimePicker1.IndicateFocus = True
-        Me.Guna2DateTimePicker1.Location = New System.Drawing.Point(676, 211)
-        Me.Guna2DateTimePicker1.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
-        Me.Guna2DateTimePicker1.Name = "Guna2DateTimePicker1"
-        Me.Guna2DateTimePicker1.Size = New System.Drawing.Size(250, 36)
-        Me.Guna2DateTimePicker1.TabIndex = 48
-        Me.Guna2DateTimePicker1.UseTransparentBackground = True
-        Me.Guna2DateTimePicker1.Value = New Date(2024, 4, 28, 1, 17, 9, 619)
+        Me.datetimepck.Animated = True
+        Me.datetimepck.BackColor = System.Drawing.Color.Transparent
+        Me.datetimepck.Checked = True
+        Me.datetimepck.FillColor = System.Drawing.SystemColors.InactiveCaption
+        Me.datetimepck.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.datetimepck.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.datetimepck.IndicateFocus = True
+        Me.datetimepck.Location = New System.Drawing.Point(676, 211)
+        Me.datetimepck.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.datetimepck.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.datetimepck.Name = "datetimepck"
+        Me.datetimepck.Size = New System.Drawing.Size(250, 36)
+        Me.datetimepck.TabIndex = 48
+        Me.datetimepck.UseTransparentBackground = True
+        Me.datetimepck.Value = New Date(2024, 4, 28, 1, 17, 9, 619)
         '
         'timeinbtn
         '
@@ -198,7 +198,7 @@ Partial Class manualAttendance
         Me.Controls.Add(Me.printdtrbtn)
         Me.Controls.Add(Me.timeoutbtn)
         Me.Controls.Add(Me.timeinbtn)
-        Me.Controls.Add(Me.Guna2DateTimePicker1)
+        Me.Controls.Add(Me.datetimepck)
         Me.Controls.Add(Me.namecmb)
         Me.Controls.Add(Me.Guna2ControlBox2)
         Me.Controls.Add(Me.Guna2ControlBox1)
@@ -217,7 +217,7 @@ Partial Class manualAttendance
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents timeinbtn As Guna.UI2.WinForms.Guna2GradientButton
-    Friend WithEvents Guna2DateTimePicker1 As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents datetimepck As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents namecmb As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents printdtrbtn As Guna.UI2.WinForms.Guna2GradientButton
     Friend WithEvents timeoutbtn As Guna.UI2.WinForms.Guna2GradientButton
