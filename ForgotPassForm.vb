@@ -1,12 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class ForgotPassForm
-    Private Sub cancelbtn_Click(sender As Object, e As EventArgs) Handles cancelbtn.Click
-        Me.Hide()
-        loginForm.Show()
-    End Sub
-
-    Private Sub changepassbtn_Click(sender As Object, e As EventArgs) Handles changepassbtn.Click
+    Private Sub changepassbtn_Click_1(sender As Object, e As EventArgs) Handles changepassbtn.Click
         Try
             Module1.Connect_to_DB()
             Dim cmd As New MySqlCommand("SELECT * FROM users WHERE username = @username AND password = @password", Module1.myconn)
@@ -46,5 +41,10 @@ Public Class ForgotPassForm
         Finally
             Module1.Disconnect_to_DB()
         End Try
+    End Sub
+
+    Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox1.Click
+        Me.Hide()
+        loginForm.Show()
     End Sub
 End Class

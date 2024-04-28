@@ -159,6 +159,30 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="addStudentForm.Designer.vb">
+      <DependentUpon>addStudentForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="addStudentForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="attendance.Designer.vb">
+      <DependentUpon>attendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="attendance.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dashboardForm.Designer.vb">
+      <DependentUpon>dashboardForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dashboardForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dtrForm.Designer.vb">
+      <DependentUpon>dtrForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="dtrForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ForgotPassForm.Designer.vb">
       <DependentUpon>ForgotPassForm.vb</DependentUpon>
     </Compile>
@@ -176,6 +200,12 @@
     </Compile>
     <Compile Include="loginForm.Designer.vb">
       <DependentUpon>loginForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="manualAttendance.Designer.vb">
+      <DependentUpon>manualAttendance.vb</DependentUpon>
+    </Compile>
+    <Compile Include="manualAttendance.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Module1.vb" />
@@ -202,6 +232,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="addStudentForm.resx">
+      <DependentUpon>addStudentForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="attendance.resx">
+      <DependentUpon>attendance.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dashboardForm.resx">
+      <DependentUpon>dashboardForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="dtrForm.resx">
+      <DependentUpon>dtrForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ForgotPassForm.resx">
       <DependentUpon>ForgotPassForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="loginForm.resx">
       <DependentUpon>loginForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="manualAttendance.resx">
+      <DependentUpon>manualAttendance.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

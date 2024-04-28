@@ -36,7 +36,7 @@ Public Class inventoryForm
                 mycmd.Parameters.AddWithValue("@remarks", remarkscmb.Text)
 
                 mycmd.ExecuteNonQuery()
-                MessageBox.Show("MODEL SUCCESSFULLY ADDED!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Successfully Submitted!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Clear_Boxes()
 
                 LoadDataGridView()
@@ -91,6 +91,18 @@ Public Class inventoryForm
                 mycmd.CommandText = strSQL
                 mycmd.Connection = Module1.myconn
                 mycmd.Parameters.AddWithValue("@idinventory", id)
+
+                ' Check if any textbox is empty, and skip updating if any are empty
+                If String.IsNullOrEmpty(modeltxt.Text) OrElse
+                String.IsNullOrEmpty(serialtxt.Text) OrElse
+                String.IsNullOrEmpty(propertytxt.Text) OrElse
+                String.IsNullOrEmpty(propertynotxt.Text) OrElse
+                String.IsNullOrEmpty(locationtxt.Text) OrElse
+                String.IsNullOrEmpty(remarkscmb.Text) Then
+                    MessageBox.Show("Please select record to be updated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    Return
+                End If
+
                 mycmd.Parameters.AddWithValue("@Model", modeltxt.Text)
                 mycmd.Parameters.AddWithValue("@Serial", serialtxt.Text)
                 mycmd.Parameters.AddWithValue("@Property", propertytxt.Text)
@@ -99,7 +111,7 @@ Public Class inventoryForm
                 mycmd.Parameters.AddWithValue("@Remarks", remarkscmb.Text)
 
                 mycmd.ExecuteNonQuery()
-                MsgBox("Record Successfully Updated")
+                MsgBox("Successfully Updated")
                 Clear_Boxes()
                 LoadDataGridView()
             End If
@@ -110,9 +122,16 @@ Public Class inventoryForm
         End Try
     End Sub
 
+
     Private Sub deletebtn_Click_1(sender As Object, e As EventArgs) Handles deletebtn.Click
         Try
             Module1.Connect_to_DB()
+
+            ' Check if modeltxt is empty, and skip deletion if it is empty
+            If String.IsNullOrEmpty(modeltxt.Text) Then
+                MessageBox.Show("Please select a record to delete.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                Return
+            End If
 
             Dim Query As String = "DELETE FROM inventory WHERE model = @Model"
             Dim answer As MsgBoxResult
@@ -125,14 +144,14 @@ Public Class inventoryForm
                     Dim rowsAffected As Integer = Command.ExecuteNonQuery()
 
                     If rowsAffected > 0 Then
-                        MessageBox.Show("Record Successfully Deleted")
+                        MessageBox.Show("Successfully Deleted")
                         Dim rowToDelete As DataRow = dbDataSet.Rows.Cast(Of DataRow)().FirstOrDefault(Function(row) row("MODEL").ToString() = modeltxt.Text)
                         If rowToDelete IsNot Nothing Then
                             dbDataSet.Rows.Remove(rowToDelete)
                         End If
                         dginventory.DataSource = dbDataSet
                     Else
-                        MessageBox.Show("No record found with the specified model.")
+                        MessageBox.Show("No record found.")
                     End If
                     Clear_Boxes()
 
@@ -144,6 +163,7 @@ Public Class inventoryForm
             Module1.Disconnect_to_DB()
         End Try
     End Sub
+
 
     Private Sub clearbtn_Click_1(sender As Object, e As EventArgs) Handles clearbtn.Click
         Clear_Boxes()
@@ -192,6 +212,16 @@ Public Class inventoryForm
                 End If
             Next
 
+            ' Set the font size to 12
+            dginventory.Font = New Font(dginventory.Font.FontFamily, 9.5)
+
+            ' Set the height of each cell to 20
+            For Each row As DataGridViewRow In dginventory.Rows
+                If row.IsNewRow Then Continue For ' Skip the new row
+                row.Height = 40
+            Next
+
+            ' Adjust column widths
             For Each col As DataGridViewColumn In dginventory.Columns
                 Dim maxTextLength As Integer = 0
                 For Each row As DataGridViewRow In dginventory.Rows
@@ -216,13 +246,6 @@ Public Class inventoryForm
         End Try
     End Sub
 
-    Private Sub searchtxt_TextChanged(sender As Object, e As EventArgs) Handles searchtxt.TextChanged
-        Dim filterExpression As String = String.Format("model Like '%{0}%' OR serial Like '%{0}%' OR property Like '%{0}%' OR propertyno Like '%{0}%' OR location Like '%{0}%' OR remarks Like '%{0}%'", searchtxt.Text)
-        Dim DV As New DataView(dbDataSet)
-        DV.RowFilter = filterExpression
-        dginventory.DataSource = DV
-    End Sub
-
     Private Sub inventoryForm_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Dim answer As MsgBoxResult
         answer = MsgBox("Are you sure you want to exit?", MsgBoxStyle.YesNo)
@@ -238,6 +261,9 @@ Public Class inventoryForm
                 Return
             End If
 
+            ' Reset mRow to 0 before showing the print preview dialog
+            mRow = 0
+
             inventoryprintpreview.Document = inventoryprint
             inventoryprintpreview.WindowState = FormWindowState.Maximized
             inventoryprintpreview.ShowDialog()
@@ -245,6 +271,7 @@ Public Class inventoryForm
             MessageBox.Show("Error occurred while preparing the print preview: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
     End Sub
+
 
     Private mRow As Integer = 0
     Private newPage As Boolean
@@ -323,5 +350,35 @@ Public Class inventoryForm
         Loop
         e.HasMorePages = newPage
         newPage = False
+    End Sub
+
+    Private Sub searchtext_TextChanged(sender As Object, e As EventArgs) Handles searchtext.TextChanged
+        PerformSearch(searchtext.Text)
+    End Sub
+
+    Private Sub PerformSearch(searchText As String)
+        Try
+            Module1.Connect_to_DB()
+            Dim Query As String = "SELECT * FROM inventory WHERE model LIKE @searchText OR serial LIKE @searchText OR location LIKE @searchText OR property LIKE @searchText OR propertyno LIKE @searchText OR remarks LIKE @searchText"
+
+            Using Command As New MySqlCommand(Query, Module1.myconn)
+                Command.Parameters.AddWithValue("@searchText", "%" & searchText & "%")
+                Using myreader As MySqlDataReader = Command.ExecuteReader()
+                    Dim dtSearchResult As New DataTable
+                    dtSearchResult.Load(myreader)
+                    dginventory.DataSource = dtSearchResult
+                    dginventory.Font = New Font(dginventory.Font.FontFamily, 9.5)
+                    For Each row As DataGridViewRow In dginventory.Rows
+                        If row.IsNewRow Then Continue For
+                        row.Height = 40
+                    Next
+                End Using
+            End Using
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+        Finally
+            Module1.Disconnect_to_DB()
+        End Try
     End Sub
 End Class

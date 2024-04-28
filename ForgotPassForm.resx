@@ -124,7 +124,7 @@
   <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA+gAAAJYCAYAAADxHswlAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAA/7JJREFUeF7snQWclFXbhxFBAcktlpIuW4zXfl8/lW5QulNQwu7uTnIL2KaWtDuw
+        vgAADr4B6kKxwAAA/7JJREFUeF7snQWclFXbhxFBAcktlpIuW4zXfl8/lW5QulNQwu7uTnIL2KaWtDuw
         i+4SARWD3uL+7v955p4588yZ3dmE1XP4Xb+nzjlPzOww19wnytXoEEuW/KnWbqbFQ/X2McZnJOC4qZyJ
         qm1nMNP9MOX7J+N+nqY8ln82+Ds47brpIYP8pnoKgqnekkC/VtN96tdkwp3ffe8FfXYm8nue+V13sGvQ
         85iO54fpXvX1/PIXlZI6h/55V3bBfYAZVKOjj5qdZlKtzjGlQycQy8Qx8UHAceAqG1CHr0zNjnHafVos
@@ -9635,6 +9635,23 @@
         60HPK7yPD93+uRUl6vlf9J+DBuqRRD3PTXuG2rOyUDyvqY8M5+irAJ1lzoiobjBuQI7Mch4J0O+noizo
         vst6JCj3BZT71m6s4kC3D9sG4AbeVhcuNwHbQLjJoBy26devn9PAgQNdyvRdyoFyUrbRwIEK6QrnCCg3
         C/qwoaPk/wA8Eal5b517cAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="Guna2PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAJ
+        0wAACdMBTpOQpQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJlSURBVFhH1ZfP
+        atRQFMbjA6gPoHUhii7V6U1aitommYpb/+wEXbkRtGJBuhBBUKxd1Nq+gS240pUKIm58Biu6sVOXpYUm
+        uUk17VzPmZzQmeTo3Im3lH7wW+U75wtzk5Mz1p6Ssqx9csSpRb59V3piLnLtBUT69mzkOmN4DT1kN6fE
+        rx2JPGcm8uxlQHUBPM5MPCr6qLy61vzaQWj4DEjaAnTBmknsQe160/rw4DFosNjWsCrfg9HaSWqrp7Au
+        zsM5rzHNqgG9Qleco/b/VjDSf8JoeA70XK87xymGF535t1KxKVzn6+pF5wDFlRX5YootNIlvP6W4TsXu
+        4CEwxKUC8yT4WlPstug95wq2qQ+o9ON71ZSRSh6M8x4dfDFNsZlwesGFrkPm9+tXKlf69g3r0aTRMTFh
+        rArG1MGv2SmKVqoZBCq+foX16SLdgTMUDz8/zHHOlJNMjCm1uZmlp6lKxm+xvl4IPXGb4lu/wBxnQuKb
+        1+DMZRYOSj9/UhuPJrrz8L6Sly+wPRHp2i8oHh9Ae75oyNn62aDo3rW1/IPtmeG8pPgdvIGG5g3s2BFc
+        0j2CXX8IccthTO2UXsMbV1mfNnVxiuJ3ZRAtlVY37VH84Z1qhgGM4nu8R4fiKEbRx0iWzOaJ/7ovwsXJ
+        gtk4oWc/priycFnApYErNMTiytDQforjteGLo2BcKRT+PzorWS5cIA3vhauBZ5+l9nqitfxLoVEVel/L
+        c7WeCdjhoEmVVQ1qxJOuZ66jeNg5DM2eQ9NGIYRjCd9zrKFys8JNBobWndYf0uwrOo8fFpzt0u8/Tba9
+        Isv6A0YIGXQMq4l2AAAAAElFTkSuQmCC
 </value>
   </data>
 </root>

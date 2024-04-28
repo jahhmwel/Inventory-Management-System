@@ -16,7 +16,7 @@ Public Class loginForm
             myreader = mycmd.ExecuteReader
             If myreader.HasRows Then
                 Me.Hide()
-                inventoryForm.Show()
+                dashboardForm.Show()
 
                 .usernametxt.Text = ""
                 .passwordtxt.Text = ""
@@ -54,6 +54,25 @@ Public Class loginForm
     Private Sub registerlink_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles registerlink.LinkClicked
         Me.Hide()
         registerForm.Show()
+    End Sub
+
+    Private Sub websitelabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles websitelabel.LinkClicked
+        Dim url As String = "https://sites.google.com/bicol-u.edu.ph/buls"
+        Process.Start(url)
+    End Sub
+
+    Private Sub facebooklabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles facebooklabel.LinkClicked
+        Dim url As String = "https://www.facebook.com/aklatangunibersidad.bicol"
+        Process.Start(url)
+    End Sub
+
+    Private Sub emaillabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles emaillabel.LinkClicked
+        Dim url As String = "https://bu-library@bicol-u.edu.ph"
+        Process.Start(url)
+    End Sub
+
+    Private Sub numberlabel_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles numberlabel.LinkClicked
+
     End Sub
 End Class
 

@@ -24,10 +24,10 @@ Partial Class loginForm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(loginForm))
-        Me.LinkLabel4 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel3 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
-        Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
+        Me.numberlabel = New System.Windows.Forms.LinkLabel()
+        Me.emaillabel = New System.Windows.Forms.LinkLabel()
+        Me.facebooklabel = New System.Windows.Forms.LinkLabel()
+        Me.websitelabel = New System.Windows.Forms.LinkLabel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
@@ -42,67 +42,67 @@ Partial Class loginForm
         Me.registerlink = New System.Windows.Forms.LinkLabel()
         Me.SuspendLayout()
         '
-        'LinkLabel4
+        'numberlabel
         '
-        Me.LinkLabel4.AutoSize = True
-        Me.LinkLabel4.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel4.Location = New System.Drawing.Point(908, 551)
-        Me.LinkLabel4.Name = "LinkLabel4"
-        Me.LinkLabel4.Size = New System.Drawing.Size(88, 15)
-        Me.LinkLabel4.TabIndex = 19
-        Me.LinkLabel4.TabStop = True
-        Me.LinkLabel4.Text = "0905-3782611"
-        Me.LinkLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.numberlabel.AutoSize = True
+        Me.numberlabel.BackColor = System.Drawing.Color.Transparent
+        Me.numberlabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.numberlabel.Location = New System.Drawing.Point(908, 551)
+        Me.numberlabel.Name = "numberlabel"
+        Me.numberlabel.Size = New System.Drawing.Size(88, 15)
+        Me.numberlabel.TabIndex = 19
+        Me.numberlabel.TabStop = True
+        Me.numberlabel.Text = "0905-3782611"
+        Me.numberlabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'LinkLabel3
+        'emaillabel
         '
-        Me.LinkLabel3.AutoSize = True
-        Me.LinkLabel3.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel3.Location = New System.Drawing.Point(670, 551)
-        Me.LinkLabel3.Name = "LinkLabel3"
-        Me.LinkLabel3.Size = New System.Drawing.Size(148, 15)
-        Me.LinkLabel3.TabIndex = 18
-        Me.LinkLabel3.TabStop = True
-        Me.LinkLabel3.Text = "bu-library@bicol-u.edu.ph"
-        Me.LinkLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.emaillabel.AutoSize = True
+        Me.emaillabel.BackColor = System.Drawing.Color.Transparent
+        Me.emaillabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.emaillabel.Location = New System.Drawing.Point(670, 551)
+        Me.emaillabel.Name = "emaillabel"
+        Me.emaillabel.Size = New System.Drawing.Size(148, 15)
+        Me.emaillabel.TabIndex = 18
+        Me.emaillabel.TabStop = True
+        Me.emaillabel.Text = "bu-library@bicol-u.edu.ph"
+        Me.emaillabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'LinkLabel1
+        'facebooklabel
         '
-        Me.LinkLabel1.AutoSize = True
-        Me.LinkLabel1.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel1.Location = New System.Drawing.Point(404, 551)
-        Me.LinkLabel1.Name = "LinkLabel1"
-        Me.LinkLabel1.Size = New System.Drawing.Size(151, 15)
-        Me.LinkLabel1.TabIndex = 17
-        Me.LinkLabel1.TabStop = True
-        Me.LinkLabel1.Text = "/aklatangunibersidad.bicol"
-        Me.LinkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.facebooklabel.AutoSize = True
+        Me.facebooklabel.BackColor = System.Drawing.Color.Transparent
+        Me.facebooklabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.facebooklabel.Location = New System.Drawing.Point(404, 551)
+        Me.facebooklabel.Name = "facebooklabel"
+        Me.facebooklabel.Size = New System.Drawing.Size(151, 15)
+        Me.facebooklabel.TabIndex = 17
+        Me.facebooklabel.TabStop = True
+        Me.facebooklabel.Text = "/aklatangunibersidad.bicol"
+        Me.facebooklabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'LinkLabel2
+        'websitelabel
         '
-        Me.LinkLabel2.AutoSize = True
-        Me.LinkLabel2.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LinkLabel2.Location = New System.Drawing.Point(81, 551)
-        Me.LinkLabel2.Name = "LinkLabel2"
-        Me.LinkLabel2.Size = New System.Drawing.Size(207, 15)
-        Me.LinkLabel2.TabIndex = 16
-        Me.LinkLabel2.TabStop = True
-        Me.LinkLabel2.Text = "sites.google.com/bicol-u.edu.ph/buls"
-        Me.LinkLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.websitelabel.AutoSize = True
+        Me.websitelabel.BackColor = System.Drawing.Color.Transparent
+        Me.websitelabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.websitelabel.Location = New System.Drawing.Point(81, 551)
+        Me.websitelabel.Name = "websitelabel"
+        Me.websitelabel.Size = New System.Drawing.Size(207, 15)
+        Me.websitelabel.TabIndex = 16
+        Me.websitelabel.TabStop = True
+        Me.websitelabel.Text = "sites.google.com/bicol-u.edu.ph/buls"
+        Me.websitelabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.IndianRed
-        Me.Label2.Location = New System.Drawing.Point(125, 309)
+        Me.Label2.Location = New System.Drawing.Point(125, 306)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(88, 20)
+        Me.Label2.Size = New System.Drawing.Size(105, 23)
         Me.Label2.TabIndex = 14
         Me.Label2.Text = "PASSWORD"
         '
@@ -110,11 +110,11 @@ Partial Class loginForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 9.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold)
         Me.Label1.ForeColor = System.Drawing.Color.IndianRed
-        Me.Label1.Location = New System.Drawing.Point(125, 228)
+        Me.Label1.Location = New System.Drawing.Point(124, 225)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 20)
+        Me.Label1.Size = New System.Drawing.Size(102, 23)
         Me.Label1.TabIndex = 13
         Me.Label1.Text = "USERNAME"
         '
@@ -124,7 +124,7 @@ Partial Class loginForm
         Me.Guna2ControlBox1.BackColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox1.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox1.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1002, 12)
+        Me.Guna2ControlBox1.Location = New System.Drawing.Point(1014, 12)
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(34, 26)
         Me.Guna2ControlBox1.TabIndex = 20
@@ -211,7 +211,7 @@ Partial Class loginForm
         Me.Guna2ControlBox2.ControlBoxType = Guna.UI2.WinForms.Enums.ControlBoxType.MinimizeBox
         Me.Guna2ControlBox2.FillColor = System.Drawing.Color.Transparent
         Me.Guna2ControlBox2.IconColor = System.Drawing.Color.Black
-        Me.Guna2ControlBox2.Location = New System.Drawing.Point(962, 12)
+        Me.Guna2ControlBox2.Location = New System.Drawing.Point(974, 12)
         Me.Guna2ControlBox2.Name = "Guna2ControlBox2"
         Me.Guna2ControlBox2.Size = New System.Drawing.Size(34, 26)
         Me.Guna2ControlBox2.TabIndex = 37
@@ -226,7 +226,7 @@ Partial Class loginForm
         Me.Guna2CheckBox1.CheckedState.FillColor = System.Drawing.Color.Transparent
         Me.Guna2CheckBox1.CheckMarkColor = System.Drawing.Color.Black
         Me.Guna2CheckBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!)
-        Me.Guna2CheckBox1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Guna2CheckBox1.ForeColor = System.Drawing.Color.DimGray
         Me.Guna2CheckBox1.Location = New System.Drawing.Point(135, 384)
         Me.Guna2CheckBox1.Name = "Guna2CheckBox1"
         Me.Guna2CheckBox1.Size = New System.Drawing.Size(125, 20)
@@ -244,7 +244,7 @@ Partial Class loginForm
         Me.LinkLabel5.BackColor = System.Drawing.Color.Transparent
         Me.LinkLabel5.ForeColor = System.Drawing.Color.Transparent
         Me.LinkLabel5.LinkColor = System.Drawing.Color.Blue
-        Me.LinkLabel5.Location = New System.Drawing.Point(280, 388)
+        Me.LinkLabel5.Location = New System.Drawing.Point(280, 385)
         Me.LinkLabel5.Name = "LinkLabel5"
         Me.LinkLabel5.Size = New System.Drawing.Size(109, 16)
         Me.LinkLabel5.TabIndex = 45
@@ -270,7 +270,7 @@ Partial Class loginForm
         Me.registerlink.Font = New System.Drawing.Font("Segoe UI", 8.0!)
         Me.registerlink.ForeColor = System.Drawing.Color.Transparent
         Me.registerlink.LinkColor = System.Drawing.Color.Blue
-        Me.registerlink.Location = New System.Drawing.Point(283, 496)
+        Me.registerlink.Location = New System.Drawing.Point(295, 496)
         Me.registerlink.Name = "registerlink"
         Me.registerlink.Size = New System.Drawing.Size(91, 19)
         Me.registerlink.TabIndex = 47
@@ -285,8 +285,8 @@ Partial Class loginForm
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1060, 600)
         Me.ControlBox = False
-        Me.Controls.Add(Me.registerlink)
         Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.registerlink)
         Me.Controls.Add(Me.LinkLabel5)
         Me.Controls.Add(Me.Guna2CheckBox1)
         Me.Controls.Add(Me.Guna2ControlBox2)
@@ -294,10 +294,10 @@ Partial Class loginForm
         Me.Controls.Add(Me.usernametxt)
         Me.Controls.Add(Me.loginbtn)
         Me.Controls.Add(Me.Guna2ControlBox1)
-        Me.Controls.Add(Me.LinkLabel4)
-        Me.Controls.Add(Me.LinkLabel3)
-        Me.Controls.Add(Me.LinkLabel1)
-        Me.Controls.Add(Me.LinkLabel2)
+        Me.Controls.Add(Me.numberlabel)
+        Me.Controls.Add(Me.emaillabel)
+        Me.Controls.Add(Me.facebooklabel)
+        Me.Controls.Add(Me.websitelabel)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.DoubleBuffered = True
@@ -313,10 +313,10 @@ Partial Class loginForm
 
     End Sub
 
-    Friend WithEvents LinkLabel4 As LinkLabel
-    Friend WithEvents LinkLabel3 As LinkLabel
-    Friend WithEvents LinkLabel1 As LinkLabel
-    Friend WithEvents LinkLabel2 As LinkLabel
+    Friend WithEvents numberlabel As LinkLabel
+    Friend WithEvents emaillabel As LinkLabel
+    Friend WithEvents facebooklabel As LinkLabel
+    Friend WithEvents websitelabel As LinkLabel
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox

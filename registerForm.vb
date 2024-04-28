@@ -1,7 +1,7 @@
 ﻿Imports MySql.Data.MySqlClient
 
 Public Class registerForm
-    Private Sub registerbtn_Click(sender As Object, e As EventArgs) Handles registerbtn.Click
+    Private Sub registerbtn_Click_1(sender As Object, e As EventArgs) Handles registerbtn.Click
         Call Connect_to_DB()
         Dim mycmd As New MySqlCommand
 
@@ -25,12 +25,12 @@ Public Class registerForm
         Hide()
     End Sub
 
-    Private Sub cancelbtn_Click(sender As Object, e As EventArgs) Handles cancelbtn.Click
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Me.Hide()
         loginForm.Show()
     End Sub
 
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+    Private Sub Guna2PictureBox1_Click(sender As Object, e As EventArgs) Handles Guna2PictureBox1.Click
         Me.Hide()
         loginForm.Show()
     End Sub

@@ -27,8 +27,6 @@ Partial Class ForgotPassForm
         Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
-        Me.changepassbtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.cancelbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.usernametxt = New Guna.UI2.WinForms.Guna2TextBox()
         Me.oldpasstxt = New Guna.UI2.WinForms.Guna2TextBox()
         Me.newpasstxt = New Guna.UI2.WinForms.Guna2TextBox()
@@ -38,6 +36,9 @@ Partial Class ForgotPassForm
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
+        Me.changepassbtn = New Guna.UI2.WinForms.Guna2GradientButton()
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -66,38 +67,6 @@ Partial Class ForgotPassForm
         Me.Guna2ControlBox1.Name = "Guna2ControlBox1"
         Me.Guna2ControlBox1.Size = New System.Drawing.Size(34, 26)
         Me.Guna2ControlBox1.TabIndex = 40
-        '
-        'changepassbtn
-        '
-        Me.changepassbtn.BackColor = System.Drawing.Color.Transparent
-        Me.changepassbtn.BorderRadius = 18
-        Me.changepassbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.changepassbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.changepassbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.changepassbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.changepassbtn.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.changepassbtn.ForeColor = System.Drawing.Color.White
-        Me.changepassbtn.Location = New System.Drawing.Point(560, 459)
-        Me.changepassbtn.Name = "changepassbtn"
-        Me.changepassbtn.Size = New System.Drawing.Size(180, 45)
-        Me.changepassbtn.TabIndex = 50
-        Me.changepassbtn.Text = "Confirm"
-        '
-        'cancelbtn
-        '
-        Me.cancelbtn.BackColor = System.Drawing.Color.Transparent
-        Me.cancelbtn.BorderRadius = 18
-        Me.cancelbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.cancelbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.cancelbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.cancelbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.cancelbtn.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cancelbtn.ForeColor = System.Drawing.Color.White
-        Me.cancelbtn.Location = New System.Drawing.Point(344, 459)
-        Me.cancelbtn.Name = "cancelbtn"
-        Me.cancelbtn.Size = New System.Drawing.Size(180, 45)
-        Me.cancelbtn.TabIndex = 51
-        Me.cancelbtn.Text = "Cancel"
         '
         'usernametxt
         '
@@ -176,7 +145,7 @@ Partial Class ForgotPassForm
         Me.confirmpasstxt.FocusedState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer), CType(CType(117, Byte), Integer))
         Me.confirmpasstxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.confirmpasstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.confirmpasstxt.Location = New System.Drawing.Point(399, 382)
+        Me.confirmpasstxt.Location = New System.Drawing.Point(399, 389)
         Me.confirmpasstxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.confirmpasstxt.Name = "confirmpasstxt"
         Me.confirmpasstxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -191,10 +160,10 @@ Partial Class ForgotPassForm
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.2!, System.Drawing.FontStyle.Bold)
+        Me.Label5.Font = New System.Drawing.Font("Microsoft YaHei UI", 15.0!, System.Drawing.FontStyle.Bold)
         Me.Label5.Location = New System.Drawing.Point(418, 60)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(271, 30)
+        Me.Label5.Size = New System.Drawing.Size(247, 33)
         Me.Label5.TabIndex = 56
         Me.Label5.Text = "RESET PASSWORD"
         '
@@ -202,10 +171,11 @@ Partial Class ForgotPassForm
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.Label6.ForeColor = System.Drawing.Color.IndianRed
         Me.Label6.Location = New System.Drawing.Point(395, 122)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(103, 20)
+        Me.Label6.Size = New System.Drawing.Size(102, 23)
         Me.Label6.TabIndex = 57
         Me.Label6.Text = "USERNAME"
         '
@@ -213,10 +183,11 @@ Partial Class ForgotPassForm
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.Label1.ForeColor = System.Drawing.Color.IndianRed
         Me.Label1.Location = New System.Drawing.Point(395, 202)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(193, 20)
+        Me.Label1.Size = New System.Drawing.Size(187, 23)
         Me.Label1.TabIndex = 58
         Me.Label1.Text = "CURRENT PASSWORD"
         '
@@ -224,10 +195,11 @@ Partial Class ForgotPassForm
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.Label2.ForeColor = System.Drawing.Color.IndianRed
         Me.Label2.Location = New System.Drawing.Point(395, 283)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(151, 20)
+        Me.Label2.Size = New System.Drawing.Size(149, 23)
         Me.Label2.TabIndex = 59
         Me.Label2.Text = "NEW PASSWORD"
         '
@@ -235,12 +207,47 @@ Partial Class ForgotPassForm
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(399, 358)
+        Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.IndianRed
+        Me.Label3.Location = New System.Drawing.Point(399, 365)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(189, 20)
+        Me.Label3.Size = New System.Drawing.Size(188, 23)
         Me.Label3.TabIndex = 60
         Me.Label3.Text = "CONFIRM PASSWORD"
+        '
+        'Guna2PictureBox1
+        '
+        Me.Guna2PictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Guna2PictureBox1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Guna2PictureBox1.Image = CType(resources.GetObject("Guna2PictureBox1.Image"), System.Drawing.Image)
+        Me.Guna2PictureBox1.ImageRotate = 0!
+        Me.Guna2PictureBox1.Location = New System.Drawing.Point(266, 60)
+        Me.Guna2PictureBox1.Name = "Guna2PictureBox1"
+        Me.Guna2PictureBox1.Size = New System.Drawing.Size(41, 39)
+        Me.Guna2PictureBox1.TabIndex = 61
+        Me.Guna2PictureBox1.TabStop = False
+        '
+        'changepassbtn
+        '
+        Me.changepassbtn.Animated = True
+        Me.changepassbtn.AutoRoundedCorners = True
+        Me.changepassbtn.BackColor = System.Drawing.Color.Transparent
+        Me.changepassbtn.BorderRadius = 18
+        Me.changepassbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.changepassbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.changepassbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.changepassbtn.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.changepassbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.changepassbtn.FillColor = System.Drawing.Color.DodgerBlue
+        Me.changepassbtn.FillColor2 = System.Drawing.Color.DarkOrange
+        Me.changepassbtn.Font = New System.Drawing.Font("Segoe UI Semibold", 10.2!, System.Drawing.FontStyle.Bold)
+        Me.changepassbtn.ForeColor = System.Drawing.Color.White
+        Me.changepassbtn.Location = New System.Drawing.Point(438, 452)
+        Me.changepassbtn.Name = "changepassbtn"
+        Me.changepassbtn.Size = New System.Drawing.Size(203, 38)
+        Me.changepassbtn.TabIndex = 62
+        Me.changepassbtn.Text = "CONFIRM"
         '
         'ForgotPassForm
         '
@@ -249,6 +256,8 @@ Partial Class ForgotPassForm
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1060, 600)
+        Me.Controls.Add(Me.changepassbtn)
+        Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
@@ -258,8 +267,6 @@ Partial Class ForgotPassForm
         Me.Controls.Add(Me.newpasstxt)
         Me.Controls.Add(Me.oldpasstxt)
         Me.Controls.Add(Me.usernametxt)
-        Me.Controls.Add(Me.cancelbtn)
-        Me.Controls.Add(Me.changepassbtn)
         Me.Controls.Add(Me.Guna2ControlBox2)
         Me.Controls.Add(Me.Guna2ControlBox1)
         Me.DoubleBuffered = True
@@ -267,6 +274,7 @@ Partial Class ForgotPassForm
         Me.Name = "ForgotPassForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ForgotPassForm"
+        CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -275,8 +283,6 @@ Partial Class ForgotPassForm
     Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
-    Friend WithEvents changepassbtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents cancelbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents confirmpasstxt As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents newpasstxt As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents oldpasstxt As Guna.UI2.WinForms.Guna2TextBox
@@ -286,4 +292,6 @@ Partial Class ForgotPassForm
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
+    Friend WithEvents changepassbtn As Guna.UI2.WinForms.Guna2GradientButton
 End Class

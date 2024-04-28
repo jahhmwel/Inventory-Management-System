@@ -23,11 +23,10 @@ Partial Class inventoryForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(inventoryForm))
-        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
         Me.Guna2ControlBox2 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Guna2ControlBox1 = New Guna.UI2.WinForms.Guna2ControlBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -53,19 +52,16 @@ Partial Class inventoryForm
         Me.clearbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.printbtn = New Guna.UI2.WinForms.Guna2Button()
         Me.exitbtn = New Guna.UI2.WinForms.Guna2Button()
-        Me.searchtxt = New System.Windows.Forms.TextBox()
         Me.Guna2PictureBox1 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Guna2PictureBox2 = New Guna.UI2.WinForms.Guna2PictureBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Guna2ContextMenuStrip1 = New Guna.UI2.WinForms.Guna2ContextMenuStrip()
+        Me.Guna2Elipse1 = New Guna.UI2.WinForms.Guna2Elipse(Me.components)
+        Me.searchtext = New Guna.UI2.WinForms.Guna2TextBox()
         CType(Me.dginventory, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Guna2PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Guna2Elipse1
-        '
-        Me.Guna2Elipse1.TargetControl = Me
         '
         'Guna2ControlBox2
         '
@@ -100,27 +96,27 @@ Partial Class inventoryForm
         '
         'dginventory
         '
-        DataGridViewCellStyle13.BackColor = System.Drawing.Color.White
-        Me.dginventory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dginventory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dginventory.BackgroundColor = System.Drawing.Color.LightGray
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dginventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dginventory.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dginventory.ColumnHeadersHeight = 4
         Me.dginventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dginventory.DefaultCellStyle = DataGridViewCellStyle15
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dginventory.DefaultCellStyle = DataGridViewCellStyle3
         Me.dginventory.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dginventory.Location = New System.Drawing.Point(533, 103)
         Me.dginventory.Name = "dginventory"
@@ -156,11 +152,12 @@ Partial Class inventoryForm
         Me.remarkscmb.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend
         Me.remarkscmb.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
         Me.remarkscmb.BackColor = System.Drawing.SystemColors.HighlightText
-        Me.remarkscmb.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.remarkscmb.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.remarkscmb.Font = New System.Drawing.Font("Segoe UI", 12.0!)
         Me.remarkscmb.FormattingEnabled = True
         Me.remarkscmb.Items.AddRange(New Object() {"Working", "Defective"})
         Me.remarkscmb.Location = New System.Drawing.Point(185, 456)
+        Me.remarkscmb.Margin = New System.Windows.Forms.Padding(3, 10, 3, 10)
         Me.remarkscmb.Name = "remarkscmb"
         Me.remarkscmb.Size = New System.Drawing.Size(290, 36)
         Me.remarkscmb.TabIndex = 65
@@ -201,6 +198,8 @@ Partial Class inventoryForm
         '
         'modeltxt
         '
+        Me.modeltxt.Animated = True
+        Me.modeltxt.BorderColor = System.Drawing.Color.Gray
         Me.modeltxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.modeltxt.DefaultText = ""
         Me.modeltxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -208,7 +207,8 @@ Partial Class inventoryForm
         Me.modeltxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.modeltxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.modeltxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.modeltxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.modeltxt.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.modeltxt.ForeColor = System.Drawing.Color.Black
         Me.modeltxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.modeltxt.Location = New System.Drawing.Point(185, 106)
         Me.modeltxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -243,6 +243,7 @@ Partial Class inventoryForm
         '
         'serialtxt
         '
+        Me.serialtxt.BorderColor = System.Drawing.Color.Gray
         Me.serialtxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.serialtxt.DefaultText = ""
         Me.serialtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -250,7 +251,8 @@ Partial Class inventoryForm
         Me.serialtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.serialtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.serialtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.serialtxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.serialtxt.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.serialtxt.ForeColor = System.Drawing.Color.Black
         Me.serialtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.serialtxt.Location = New System.Drawing.Point(185, 174)
         Me.serialtxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -263,6 +265,7 @@ Partial Class inventoryForm
         '
         'propertytxt
         '
+        Me.propertytxt.BorderColor = System.Drawing.Color.Gray
         Me.propertytxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.propertytxt.DefaultText = ""
         Me.propertytxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -270,7 +273,8 @@ Partial Class inventoryForm
         Me.propertytxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.propertytxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.propertytxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.propertytxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.propertytxt.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.propertytxt.ForeColor = System.Drawing.Color.Black
         Me.propertytxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.propertytxt.Location = New System.Drawing.Point(185, 244)
         Me.propertytxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -294,6 +298,7 @@ Partial Class inventoryForm
         '
         'propertynotxt
         '
+        Me.propertynotxt.BorderColor = System.Drawing.Color.Gray
         Me.propertynotxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.propertynotxt.DefaultText = ""
         Me.propertynotxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -301,7 +306,8 @@ Partial Class inventoryForm
         Me.propertynotxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.propertynotxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.propertynotxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.propertynotxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.propertynotxt.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.propertynotxt.ForeColor = System.Drawing.Color.Black
         Me.propertynotxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.propertynotxt.Location = New System.Drawing.Point(185, 312)
         Me.propertynotxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -325,6 +331,7 @@ Partial Class inventoryForm
         '
         'locationtxt
         '
+        Me.locationtxt.BorderColor = System.Drawing.Color.Gray
         Me.locationtxt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.locationtxt.DefaultText = ""
         Me.locationtxt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -332,7 +339,8 @@ Partial Class inventoryForm
         Me.locationtxt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.locationtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.locationtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.locationtxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.locationtxt.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.locationtxt.ForeColor = System.Drawing.Color.Black
         Me.locationtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.locationtxt.Location = New System.Drawing.Point(185, 383)
         Me.locationtxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
@@ -450,17 +458,6 @@ Partial Class inventoryForm
         Me.exitbtn.TabIndex = 87
         Me.exitbtn.Text = "EXIT"
         '
-        'searchtxt
-        '
-        Me.searchtxt.BackColor = System.Drawing.SystemColors.ControlLight
-        Me.searchtxt.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.searchtxt.Font = New System.Drawing.Font("Segoe UI", 11.0!)
-        Me.searchtxt.Location = New System.Drawing.Point(1286, 60)
-        Me.searchtxt.Multiline = True
-        Me.searchtxt.Name = "searchtxt"
-        Me.searchtxt.Size = New System.Drawing.Size(274, 37)
-        Me.searchtxt.TabIndex = 55
-        '
         'Guna2PictureBox1
         '
         Me.Guna2PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -486,7 +483,7 @@ Partial Class inventoryForm
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(1172, 72)
+        Me.Label5.Location = New System.Drawing.Point(1185, 69)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(84, 28)
         Me.Label5.TabIndex = 89
@@ -507,12 +504,40 @@ Partial Class inventoryForm
         Me.Guna2ContextMenuStrip1.RenderStyle.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault
         Me.Guna2ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
+        'Guna2Elipse1
+        '
+        Me.Guna2Elipse1.TargetControl = Me
+        '
+        'searchtext
+        '
+        Me.searchtext.Animated = True
+        Me.searchtext.BorderColor = System.Drawing.Color.Gray
+        Me.searchtext.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.searchtext.DefaultText = ""
+        Me.searchtext.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.searchtext.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.searchtext.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchtext.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.searchtext.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.searchtext.Font = New System.Drawing.Font("Segoe UI", 12.0!)
+        Me.searchtext.ForeColor = System.Drawing.Color.Black
+        Me.searchtext.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.searchtext.Location = New System.Drawing.Point(1270, 59)
+        Me.searchtext.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.searchtext.Name = "searchtext"
+        Me.searchtext.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.searchtext.PlaceholderText = ""
+        Me.searchtext.SelectedText = ""
+        Me.searchtext.Size = New System.Drawing.Size(290, 37)
+        Me.searchtext.TabIndex = 92
+        '
         'inventoryForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1584, 769)
+        Me.Controls.Add(Me.searchtext)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.exitbtn)
         Me.Controls.Add(Me.printbtn)
@@ -534,16 +559,17 @@ Partial Class inventoryForm
         Me.Controls.Add(Me.idinventorytxt)
         Me.Controls.Add(Me.remarkscmb)
         Me.Controls.Add(Me.dginventory)
-        Me.Controls.Add(Me.searchtxt)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Guna2ControlBox2)
         Me.Controls.Add(Me.Guna2ControlBox1)
         Me.Controls.Add(Me.Guna2PictureBox1)
         Me.Controls.Add(Me.Guna2PictureBox2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.Location = New System.Drawing.Point(150, 100)
         Me.MaximumSize = New System.Drawing.Size(1584, 769)
         Me.Name = "inventoryForm"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "inventoryForm"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         CType(Me.dginventory, System.ComponentModel.ISupportInitialize).EndInit()
@@ -553,8 +579,6 @@ Partial Class inventoryForm
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
     Friend WithEvents Guna2ControlBox2 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Guna2ControlBox1 As Guna.UI2.WinForms.Guna2ControlBox
     Friend WithEvents Label3 As Label
@@ -580,9 +604,10 @@ Partial Class inventoryForm
     Friend WithEvents clearbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents printbtn As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents exitbtn As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents searchtxt As TextBox
     Friend WithEvents Guna2PictureBox1 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Guna2PictureBox2 As Guna.UI2.WinForms.Guna2PictureBox
     Friend WithEvents Label5 As Label
     Friend WithEvents Guna2ContextMenuStrip1 As Guna.UI2.WinForms.Guna2ContextMenuStrip
+    Friend WithEvents Guna2Elipse1 As Guna.UI2.WinForms.Guna2Elipse
+    Friend WithEvents searchtext As Guna.UI2.WinForms.Guna2TextBox
 End Class
