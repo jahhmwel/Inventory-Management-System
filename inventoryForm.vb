@@ -14,14 +14,14 @@ Public Class inventoryForm
             String.IsNullOrEmpty(serialtxt.Text) OrElse
             String.IsNullOrEmpty(propertytxt.Text) OrElse
             String.IsNullOrEmpty(propertynotxt.Text) OrElse
-            String.IsNullOrEmpty(locationtxt.Text) OrElse
+            String.IsNullOrEmpty(locationcmb.Text) OrElse
             String.IsNullOrEmpty(remarkscmb.Text) Then
 
                 MessageBox.Show("Please fill in all required fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
 
-            If CheckDuplicateData(modeltxt.Text, serialtxt.Text, propertytxt.Text, propertynotxt.Text, locationtxt.Text, remarkscmb.Text) Then
+            If CheckDuplicateData(modeltxt.Text, serialtxt.Text, propertytxt.Text, propertynotxt.Text, locationcmb.Text, remarkscmb.Text) Then
                 MessageBox.Show("Data already exists in the database. Duplicate entry not allowed.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Return
             End If
@@ -32,7 +32,7 @@ Public Class inventoryForm
                 mycmd.Parameters.AddWithValue("@serial", serialtxt.Text)
                 mycmd.Parameters.AddWithValue("@property", propertytxt.Text)
                 mycmd.Parameters.AddWithValue("@propertyno", propertynotxt.Text)
-                mycmd.Parameters.AddWithValue("@location", locationtxt.Text)
+                mycmd.Parameters.AddWithValue("@location", locationcmb.Text)
                 mycmd.Parameters.AddWithValue("@remarks", remarkscmb.Text)
 
                 mycmd.ExecuteNonQuery()
@@ -75,8 +75,8 @@ Public Class inventoryForm
         serialtxt.Text = ""
         propertytxt.Text = ""
         propertynotxt.Text = ""
-        locationtxt.Text = ""
-        remarkscmb.SelectedIndex = -1
+        locationcmb.Text = ""
+        remarkscmb.Text = ""
     End Sub
 
     Private Sub updatebtn_Click_1(sender As Object, e As EventArgs) Handles updatebtn.Click
@@ -97,7 +97,7 @@ Public Class inventoryForm
                 String.IsNullOrEmpty(serialtxt.Text) OrElse
                 String.IsNullOrEmpty(propertytxt.Text) OrElse
                 String.IsNullOrEmpty(propertynotxt.Text) OrElse
-                String.IsNullOrEmpty(locationtxt.Text) OrElse
+                String.IsNullOrEmpty(locationcmb.Text) OrElse
                 String.IsNullOrEmpty(remarkscmb.Text) Then
                     MessageBox.Show("Please select record to be updated.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     Return
@@ -107,7 +107,7 @@ Public Class inventoryForm
                 mycmd.Parameters.AddWithValue("@Serial", serialtxt.Text)
                 mycmd.Parameters.AddWithValue("@Property", propertytxt.Text)
                 mycmd.Parameters.AddWithValue("@Propertyno", propertynotxt.Text)
-                mycmd.Parameters.AddWithValue("@Location", locationtxt.Text)
+                mycmd.Parameters.AddWithValue("@Location", locationcmb.Text)
                 mycmd.Parameters.AddWithValue("@Remarks", remarkscmb.Text)
 
                 mycmd.ExecuteNonQuery()
@@ -181,7 +181,7 @@ Public Class inventoryForm
             serialtxt.Text = row.Cells("serial").Value.ToString
             propertytxt.Text = row.Cells("property").Value.ToString
             propertynotxt.Text = row.Cells("propertyno").Value.ToString
-            locationtxt.Text = row.Cells("location").Value.ToString
+            locationcmb.Text = row.Cells("location").Value.ToString
             remarkscmb.Text = row.Cells("remarks").Value.ToString
         End If
     End Sub
