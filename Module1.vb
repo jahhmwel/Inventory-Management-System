@@ -3,7 +3,7 @@
 Module Module1
     Public myConnectionString As String = "server=localhost;port=3306;" _
                                             & "uid=root;" _
-                                            & "pwd=jmtn0630naz;" _
+                                            & "pwd=admin;" _
                                             & "database=records"
     Public myconn As New MySqlConnection(myConnectionString)
     Public strSQL As String

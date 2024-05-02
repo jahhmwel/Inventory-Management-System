@@ -39,14 +39,14 @@ Public Class attendance
             commandStudentId.Parameters.AddWithValue("@student_name", selectedStudentName)
             Dim studentId = Convert.ToInt32(commandStudentId.ExecuteScalar)
 
-            Dim currentDate = Date.Today
-            Dim currentTime = Date.Now
+            Dim currentDate = Date.Today.ToString("dd-MM-yyyy") ' Change date format to dd-MM-yyyy
+            Dim currentTime = DateTime.Now.ToString("hh:mm") ' Change time format to 12-hour clock without AM/PM
 
             Dim queryUpdateTimeIn = "INSERT INTO attendance (student_id, date_attended, time_in, status) VALUES (@student_id, @date_attended, @time_in, 'Present')"
             Dim commandUpdateTimeIn As New MySqlCommand(queryUpdateTimeIn, myconn)
             commandUpdateTimeIn.Parameters.AddWithValue("@student_id", studentId)
             commandUpdateTimeIn.Parameters.AddWithValue("@date_attended", currentDate)
-            commandUpdateTimeIn.Parameters.AddWithValue("@time_in", currentTime.TimeOfDay)
+            commandUpdateTimeIn.Parameters.AddWithValue("@time_in", currentTime)
             commandUpdateTimeIn.ExecuteNonQuery()
 
             MessageBox.Show("Time in recorded successfully.")
@@ -68,7 +68,7 @@ Public Class attendance
             commandStudentId.Parameters.AddWithValue("@student_name", selectedStudentName)
             Dim studentId As Integer = Convert.ToInt32(commandStudentId.ExecuteScalar())
 
-            Dim currentDate As Date = Date.Today
+            Dim currentDate As String = Date.Today.ToString("dd-MM-yyyy") ' Change date format to dd-MM-yyyy
 
             Dim queryCheckTimeIn As String = "SELECT COUNT(*) FROM attendance WHERE student_id = @student_id AND date_attended = @date_attended AND time_in IS NOT NULL"
             Dim commandCheckTimeIn As New MySqlCommand(queryCheckTimeIn, myconn)
@@ -81,16 +81,17 @@ Public Class attendance
                 Exit Sub
             End If
 
-            Dim currentTime As DateTime = DateTime.Now
+            Dim currentTime As String = DateTime.Now.ToString("hh:mm") ' Change time format to 12-hour clock without AM/PM
 
             Dim queryUpdateTimeOut As String = "UPDATE attendance SET time_out = @time_out WHERE student_id = @student_id AND date_attended = @date_attended"
             Dim commandUpdateTimeOut As New MySqlCommand(queryUpdateTimeOut, myconn)
-            commandUpdateTimeOut.Parameters.AddWithValue("@time_out", currentTime.TimeOfDay)
+            commandUpdateTimeOut.Parameters.AddWithValue("@time_out", currentTime)
             commandUpdateTimeOut.Parameters.AddWithValue("@student_id", studentId)
             commandUpdateTimeOut.Parameters.AddWithValue("@date_attended", currentDate)
             commandUpdateTimeOut.ExecuteNonQuery()
 
-            Dim queryCalculateTotalTime As String = "UPDATE attendance SET total_time = TIMEDIFF(time_out, time_in) WHERE student_id = @student_id AND date_attended = @date_attended"
+            ' Calculate total time difference in hours and minutes
+            Dim queryCalculateTotalTime As String = "UPDATE attendance SET total_time = TIME_FORMAT(SEC_TO_TIME(TIME_TO_SEC(time_out) - TIME_TO_SEC(time_in)), '%H:%i') WHERE student_id = @student_id AND date_attended = @date_attended"
             Dim commandCalculateTotalTime As New MySqlCommand(queryCalculateTotalTime, myconn)
             commandCalculateTotalTime.Parameters.AddWithValue("@student_id", studentId)
             commandCalculateTotalTime.Parameters.AddWithValue("@date_attended", currentDate)
@@ -98,13 +99,13 @@ Public Class attendance
 
             MessageBox.Show("Time out recorded successfully.")
 
-
         Catch ex As Exception
             MessageBox.Show("Error: " & ex.Message)
         Finally
             Module1.Disconnect_to_DB()
         End Try
     End Sub
+
 
     Private Sub printdtrbtn_Click(sender As Object, e As EventArgs) Handles printdtrbtn.Click
         Me.Hide()

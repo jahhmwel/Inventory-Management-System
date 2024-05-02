@@ -34,45 +34,62 @@ Public Class dtrForm
 
         Try
             Module1.Connect_to_DB()
+
             If Module1.myconn IsNot Nothing AndAlso Module1.myconn.State = ConnectionState.Open Then
-                Dim selectedName As String = namecmb.SelectedItem.ToString()
-                Dim selectedStudentId As Integer
+                Dim selectedName As String = namecmb.SelectedItem?.ToString()
 
-                Using command As New MySqlCommand("SELECT id FROM students WHERE student_name = @student_name", Module1.myconn)
-                    command.Parameters.AddWithValue("@student_name", selectedName)
-                    selectedStudentId = Convert.ToInt32(command.ExecuteScalar())
-                End Using
+                If Not String.IsNullOrEmpty(selectedName) Then
+                    Dim selectedStudentId As Integer
 
-                Dim query As String = "SELECT date_attended, time_in, time_out, total_time FROM attendance WHERE student_id = @student_id"
+                    ' Get the student ID based on the selected name
+                    Using command As New MySqlCommand("SELECT id FROM students WHERE student_name = @student_name", Module1.myconn)
+                        command.Parameters.AddWithValue("@student_name", selectedName)
+                        selectedStudentId = Convert.ToInt32(command.ExecuteScalar())
+                    End Using
 
-                Using command As New MySqlCommand(query, Module1.myconn)
-                    command.Parameters.AddWithValue("@student_id", selectedStudentId)
+                    ' Fetch attendance data for the selected student
+                    Dim query As String = "SELECT date_attended, time_in, time_out, total_time FROM attendance WHERE student_id = @student_id"
 
-                    Dim dt As New DataTable()
+                    Using command As New MySqlCommand(query, Module1.myconn)
+                        command.Parameters.AddWithValue("@student_id", selectedStudentId)
 
-                    Dim adapter As New MySqlDataAdapter(command)
-                    adapter.Fill(dt)
+                        Dim dt As New DataTable()
+                        Dim adapter As New MySqlDataAdapter(command)
+                        adapter.Fill(dt)
 
-                    dgdtr.DataSource = dt
+                        ' Set the data source for the DataGridView
+                        dgdtr.DataSource = dt
 
-                    dgdtr.Columns("date_attended").HeaderText = "Date Attended"
-                    dgdtr.Columns("time_in").HeaderText = "Time In"
-                    dgdtr.Columns("time_out").HeaderText = "Time Out"
-                    dgdtr.Columns("total_time").HeaderText = "Total Time"
+                        ' Optionally, auto-generate columns based on the data source
+                        ' dgdtr.AutoGenerateColumns = True
 
-                    ' Adjust header height
-                    dgdtr.ColumnHeadersHeight = 30 ' Adjust the height as per your requirement
+                        ' Update column headers
+                        dgdtr.Columns("date_attended").HeaderText = "Date Attended"
+                        dgdtr.Columns("time_in").HeaderText = "Time In"
+                        dgdtr.Columns("time_out").HeaderText = "Time Out"
+                        dgdtr.Columns("total_time").HeaderText = "Total Time"
 
-                    ' Calculate total hours and display in the textbox
-                    Dim totalSum As TimeSpan = TimeSpan.Zero
-                    For Each row As DataRow In dt.Rows
-                        If Not IsDBNull(row("total_time")) Then
-                            totalSum = totalSum.Add(TimeSpan.Parse(row("total_time").ToString()))
-                        End If
-                    Next
+                        ' Calculate and display total hours
+                        Dim totalSum As TimeSpan = TimeSpan.Zero
+                        For Each row As DataRow In dt.Rows
+                            If Not IsDBNull(row("total_time")) Then
+                                Dim totalTimeString As String = row("total_time").ToString()
+                                Dim timeParts As String() = totalTimeString.Split(":") ' Split the time string into hours and minutes
+                                If timeParts.Length = 2 Then
+                                    Dim hours As Integer = 0
+                                    Dim minutes As Integer = 0
+                                    If Integer.TryParse(timeParts(0), hours) AndAlso Integer.TryParse(timeParts(1), minutes) Then
+                                        totalSum = totalSum.Add(New TimeSpan(hours, minutes, 0)) ' Create TimeSpan from hours and minutes
+                                    End If
+                                End If
+                            End If
+                        Next
 
-                    totalhourstxt.Text = totalSum.TotalHours.ToString("0.00")
-                End Using
+                        ' Display total hours in the TextBox
+                        totalhourstxt.Text = totalSum.Hours.ToString("00") & " hours " & totalSum.Minutes.ToString("00") & " minutes"
+
+                    End Using
+                End If
             Else
                 MessageBox.Show("Database connection is not valid or open.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -82,6 +99,7 @@ Public Class dtrForm
             Module1.Disconnect_to_DB()
         End Try
     End Sub
+
 
     Private Sub printdtrbtn_Click(sender As Object, e As EventArgs) Handles printdtrbtn.Click
         Try
@@ -151,5 +169,10 @@ Public Class dtrForm
         Finally
             Module1.Disconnect_to_DB()
         End Try
+    End Sub
+
+    Private Sub backbtn_Click(sender As Object, e As EventArgs) Handles backbtn.Click
+        Me.Hide()
+        dashboardForm.Show()
     End Sub
 End Class

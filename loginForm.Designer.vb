@@ -167,7 +167,7 @@ Partial Class loginForm
         Me.usernametxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.usernametxt.FillColor = System.Drawing.Color.WhiteSmoke
         Me.usernametxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.usernametxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.usernametxt.Font = New System.Drawing.Font("Segoe UI", 9.2!)
         Me.usernametxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.usernametxt.IconLeft = CType(resources.GetObject("usernametxt.IconLeft"), System.Drawing.Image)
         Me.usernametxt.Location = New System.Drawing.Point(128, 252)
@@ -192,7 +192,7 @@ Partial Class loginForm
         Me.passwordtxt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
         Me.passwordtxt.FillColor = System.Drawing.Color.WhiteSmoke
         Me.passwordtxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.passwordtxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.passwordtxt.Font = New System.Drawing.Font("Segoe UI", 9.2!)
         Me.passwordtxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.passwordtxt.IconLeft = CType(resources.GetObject("passwordtxt.IconLeft"), System.Drawing.Image)
         Me.passwordtxt.Location = New System.Drawing.Point(128, 333)

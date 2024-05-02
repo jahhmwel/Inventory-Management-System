@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34701.34
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Inventory Management System", "Inventory Management System.vbproj", "{EE732F5A-8FF4-4EBC-AC7D-C8657CFCA3AB}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "e-Logbook", "..\e-Logbook\e-Logbook.vdproj", "{5B531F95-4511-4CF3-B563-46AA3EB48A2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{EE732F5A-8FF4-4EBC-AC7D-C8657CFCA3AB}.Debug|Any CPU.Build.0 = Release|Any CPU
 		{EE732F5A-8FF4-4EBC-AC7D-C8657CFCA3AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE732F5A-8FF4-4EBC-AC7D-C8657CFCA3AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B531F95-4511-4CF3-B563-46AA3EB48A2E}.Debug|Any CPU.ActiveCfg = Release
+		{5B531F95-4511-4CF3-B563-46AA3EB48A2E}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

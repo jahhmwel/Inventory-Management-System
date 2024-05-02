@@ -26,12 +26,14 @@ Public Class addStudentForm
             End If
 
             ' Continue with database operation if input is valid
-            Dim sql As String = "INSERT INTO students (student_no, student_name, college, course) VALUES (@student_no, @student_name, @college, @course)"
+            Dim currentDate As Date = Date.Today ' Get the current date without the time
+            Dim sql As String = "INSERT INTO students (student_no, student_name, college, course, date_added) VALUES (@student_no, @student_name, @college, @course, @date_added)"
             Using mycmd As New MySqlCommand(sql, Module1.myconn)
                 mycmd.Parameters.AddWithValue("@student_no", studentnotxt.Text)
                 mycmd.Parameters.AddWithValue("@student_name", studentnametxt.Text)
                 mycmd.Parameters.AddWithValue("@college", cmbcollege.Text)
                 mycmd.Parameters.AddWithValue("@course", cmbcourse.Text)
+                mycmd.Parameters.AddWithValue("@date_added", currentDate) ' Use the current date without the time
 
                 mycmd.ExecuteNonQuery()
                 MessageBox.Show("Student Successfully Registered!", "Successful", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -46,6 +48,7 @@ Public Class addStudentForm
             Module1.Disconnect_to_DB()
         End Try
     End Sub
+
 
     Private Sub studentnotxt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles studentnotxt.KeyPress
         ' Check if the pressed key is a digit (0-9), hyphen (-), or the backspace key (to allow editing)
@@ -83,8 +86,8 @@ Public Class addStudentForm
     Private Sub Clear_Boxes()
         studentnotxt.Text = ""
         studentnametxt.Text = ""
-        cmbcollege.SelectedIndex = -0
-        cmbcourse.SelectedIndex = -0
+        cmbcollege.Text = ""
+        cmbcourse.Text = ""
     End Sub
 
 
@@ -156,11 +159,6 @@ Public Class addStudentForm
         Finally
             Module1.Disconnect_to_DB()
         End Try
-    End Sub
-
-    Private Sub backpicbtn_Click(sender As Object, e As EventArgs) Handles backpicbtn.Click
-        Me.Hide()
-        dashboardForm.Show()
     End Sub
 
     Private Sub updatebtn_Click(sender As Object, e As EventArgs) Handles updatebtn.Click
@@ -296,6 +294,7 @@ Public Class addStudentForm
         cmbcollege.Items.Add("College of Medicine")
         cmbcollege.Items.Add("College of Law")
         cmbcollege.Items.Add("Externals")
+        cmbcollege.Text = ""
     End Sub
 
     Private Sub cmbcollege_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cmbcollege.SelectedIndexChanged
@@ -488,6 +487,11 @@ Public Class addStudentForm
                 cmbcourse.Items.Add("Technical")
                 cmbcourse.Items.Add("Auxiliary")
         End Select
-        cmbcourse.SelectedIndex = 0
+        cmbcourse.Text = ""
+    End Sub
+
+    Private Sub exitbtn_Click(sender As Object, e As EventArgs) Handles exitbtn.Click
+        Me.Hide()
+        dashboardForm.Show()
     End Sub
 End Class

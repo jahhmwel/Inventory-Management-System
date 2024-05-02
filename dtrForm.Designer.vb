@@ -37,7 +37,9 @@ Partial Class dtrForm
         Me.totalhourstxt = New Guna.UI2.WinForms.Guna2TextBox()
         Me.dgdtr = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.backbtn = New Guna.UI2.WinForms.Guna2PictureBox()
         CType(Me.dgdtr, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.backbtn, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Guna2Elipse1
@@ -119,13 +121,13 @@ Partial Class dtrForm
         Me.totalhourstxt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.totalhourstxt.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.totalhourstxt.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.totalhourstxt.Location = New System.Drawing.Point(824, 55)
+        Me.totalhourstxt.Location = New System.Drawing.Point(738, 55)
         Me.totalhourstxt.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.totalhourstxt.Name = "totalhourstxt"
         Me.totalhourstxt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.totalhourstxt.PlaceholderText = ""
         Me.totalhourstxt.SelectedText = ""
-        Me.totalhourstxt.Size = New System.Drawing.Size(108, 28)
+        Me.totalhourstxt.Size = New System.Drawing.Size(194, 28)
         Me.totalhourstxt.TabIndex = 68
         '
         'dgdtr
@@ -133,6 +135,7 @@ Partial Class dtrForm
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.dgdtr.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgdtr.BackgroundColor = System.Drawing.Color.LightGray
+        Me.dgdtr.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -186,11 +189,24 @@ Partial Class dtrForm
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft YaHei UI", 11.25!, System.Drawing.FontStyle.Bold)
-        Me.Label1.Location = New System.Drawing.Point(593, 57)
+        Me.Label1.Location = New System.Drawing.Point(507, 57)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(225, 26)
         Me.Label1.TabIndex = 70
         Me.Label1.Text = "Total Hours Attended:"
+        '
+        'backbtn
+        '
+        Me.backbtn.BackColor = System.Drawing.Color.Transparent
+        Me.backbtn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.backbtn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.backbtn.Image = CType(resources.GetObject("backbtn.Image"), System.Drawing.Image)
+        Me.backbtn.ImageRotate = 0!
+        Me.backbtn.Location = New System.Drawing.Point(25, 21)
+        Me.backbtn.Name = "backbtn"
+        Me.backbtn.Size = New System.Drawing.Size(41, 39)
+        Me.backbtn.TabIndex = 71
+        Me.backbtn.TabStop = False
         '
         'dtrForm
         '
@@ -199,6 +215,7 @@ Partial Class dtrForm
         Me.BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), System.Drawing.Image)
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1000, 600)
+        Me.Controls.Add(Me.backbtn)
         Me.Controls.Add(Me.totalhourstxt)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgdtr)
@@ -212,6 +229,7 @@ Partial Class dtrForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "dtrForm"
         CType(Me.dgdtr, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.backbtn, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -227,4 +245,5 @@ Partial Class dtrForm
     Friend WithEvents totalhourstxt As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents dgdtr As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Label1 As Label
+    Friend WithEvents backbtn As Guna.UI2.WinForms.Guna2PictureBox
 End Class

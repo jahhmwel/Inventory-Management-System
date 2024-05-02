@@ -7,7 +7,7 @@ Public Class inventoryForm
     Dim dbDataSet As New DataTable
     Dim bSource As New BindingSource
 
-    Private Sub submitbtn_Click_1(sender As Object, e As EventArgs) Handles submitbtn.Click
+    Private Sub submitbtn_Click(sender As Object, e As EventArgs) Handles submitbtn.Click
         Try
             Module1.Connect_to_DB()
             If String.IsNullOrEmpty(modeltxt.Text) OrElse
@@ -48,7 +48,6 @@ Public Class inventoryForm
         End Try
     End Sub
 
-
     Private Function CheckDuplicateData(model As String, serial As String, prop As String, propertyno As String, loc As String, remarks As String) As Boolean
         Dim isDuplicate As Boolean = False
         Dim query As String = "SELECT COUNT(*) FROM inventory WHERE model = @model AND serial = @serial AND property = @property AND propertyno = @propertyno AND location = @location AND remarks = @remarks"
@@ -79,7 +78,7 @@ Public Class inventoryForm
         remarkscmb.Text = ""
     End Sub
 
-    Private Sub updatebtn_Click_1(sender As Object, e As EventArgs) Handles updatebtn.Click
+    Private Sub updatebtn_Click(sender As Object, e As EventArgs) Handles updatebtn.Click
         Try
             If dginventory.SelectedRows.Count > 0 Then
                 Dim id As Integer = Convert.ToInt32(dginventory.SelectedRows(0).Cells("idinventory").Value)
@@ -122,8 +121,7 @@ Public Class inventoryForm
         End Try
     End Sub
 
-
-    Private Sub deletebtn_Click_1(sender As Object, e As EventArgs) Handles deletebtn.Click
+    Private Sub deletebtn_Click(sender As Object, e As EventArgs) Handles deletebtn.Click
         Try
             Module1.Connect_to_DB()
 
@@ -164,14 +162,13 @@ Public Class inventoryForm
         End Try
     End Sub
 
-
-    Private Sub clearbtn_Click_1(sender As Object, e As EventArgs) Handles clearbtn.Click
+    Private Sub clearbtn_Click(sender As Object, e As EventArgs) Handles clearbtn.Click
         Clear_Boxes()
     End Sub
 
-    Private Sub exitbtn_Click_1(sender As Object, e As EventArgs) Handles exitbtn.Click
+    Private Sub exitbtn_Click(sender As Object, e As EventArgs) Handles exitbtn.Click
         Me.Close()
-        loginForm.Show()
+        dashboardForm.Show()
     End Sub
 
     Private Sub dginventory_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dginventory.CellContentClick
@@ -254,7 +251,8 @@ Public Class inventoryForm
         End If
     End Sub
 
-    Private Sub printbtn_Click_1(sender As Object, e As EventArgs) Handles printbtn.Click
+
+    Private Sub printbtn_Click(sender As Object, e As EventArgs) Handles printbtn.Click
         Try
             If dginventory.Rows.Count = 0 Then
                 MessageBox.Show("There are no records to print.", "No Records", MessageBoxButtons.OK, MessageBoxIcon.Information)
